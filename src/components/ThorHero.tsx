@@ -172,7 +172,7 @@ const ThorHero = () => {
           src="/assets/thor.png"
           alt="Thor - God of Thunder"
           className="absolute z-20 h-[70vh] md:h-[85vh] object-contain opacity-0 thunder-glow select-none"
-          style={{ bottom: "0", left: "50%", transform: "translateX(-50%)" }}
+          style={{ bottom: "5%", left: "50%", transform: "translateX(-50%)" }}
         />
 
         {/* Layer 3 (Z-30): UI Elements */}
