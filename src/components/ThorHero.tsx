@@ -10,6 +10,7 @@ const ThorHero = () => {
   const lightningRef = useRef<HTMLDivElement>(null);
   const lightningVideoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const thorRef = useRef<HTMLImageElement>(null);
   const textLayerRef = useRef<HTMLImageElement>(null);
   const uiRef = useRef<HTMLDivElement>(null);
@@ -99,7 +100,7 @@ const ThorHero = () => {
     // Setup parallax scroll
     tl.call(() => {
       ScrollTrigger.create({
-        trigger: containerRef.current,
+        trigger: sectionRef.current,
         start: "top top",
         end: "bottom top",
         scrub: 1,
@@ -117,7 +118,7 @@ const ThorHero = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative min-h-[200vh]">
+    <div ref={containerRef} className="relative m-0 p-0 min-h-[200vh]">
       {/* Thunder audio */}
       <video ref={audioRef} src="/assets/thunder-2.mp4" className="hidden" playsInline preload="auto" />
 
@@ -152,7 +153,7 @@ const ThorHero = () => {
       </div>
 
       {/* Hero section */}
-      <section className="relative h-screen w-full overflow-hidden flex items-center justify-center sticky top-0">
+      <section ref={sectionRef} className="relative h-screen min-h-screen w-full overflow-hidden sticky top-0">
         <div className="absolute inset-0 z-0" style={{
           background: "radial-gradient(ellipse at 50% 80%, hsl(210 60% 8%) 0%, hsl(220 20% 4%) 60%, hsl(0 0% 0%) 100%)"
         }} />
@@ -162,8 +163,8 @@ const ThorHero = () => {
           ref={textLayerRef}
           src="/assets/text_layer.png"
           alt=""
-          className="absolute z-10 w-[90vw] max-w-[1200px] opacity-0 select-none pointer-events-none object-contain"
-          style={{ top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
+          className="absolute z-10 w-[110vw] max-w-[1400px] opacity-0 select-none pointer-events-none object-contain"
+          style={{ top: "5%", left: "50%", transform: "translateX(-50%)" }}
         />
 
         {/* Layer 2 (Z-20): Thor character */}
@@ -171,8 +172,8 @@ const ThorHero = () => {
           ref={thorRef}
           src="/assets/thor.png"
           alt="Thor - God of Thunder"
-          className="absolute z-20 h-[70vh] md:h-[85vh] object-contain opacity-0 thunder-glow select-none"
-          style={{ bottom: "5%", left: "50%", transform: "translateX(-50%)" }}
+          className="absolute z-20 h-[90vh] md:h-[95vh] object-contain opacity-0 thunder-glow select-none"
+          style={{ top: "0", left: "50%", transform: "translateX(-50%)" }}
         />
 
         {/* Layer 3 (Z-30): UI Elements */}
