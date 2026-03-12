@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LightningArcs from "./LightningArcs";
 
 gsap.registerPlugin(ScrollTrigger);
 
